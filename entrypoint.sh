@@ -5,7 +5,8 @@ FOLDER="$1"
 GITHUB_USERNAME="$2"
 GITHUB_REPO="$3"
 USER_EMAIL="$4"
-REPO_USERNAME="$5"
+DESTINATION_DIRECTORY="$5"
+REPO_USERNAME="$6"
 
 if [ -z "$REPO_USERNAME" ]
 then
@@ -27,7 +28,7 @@ ls -la "$CLONE_DIR"
 # ls -la "$CLONE_DIR"
 
 echo "Copying contents to to git repo"
-cp -r "$FOLDER"/* "$CLONE_DIR"
+cp -r "$FOLDER"/* "$CLONE_DIR"/"$DESTINATION_DIRECTORY"
 cd "$CLONE_DIR"
 ls -la
 
