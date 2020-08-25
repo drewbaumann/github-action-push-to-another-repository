@@ -15,6 +15,8 @@ fi
 
 CLONE_DIR=$(mktemp -d)
 
+DESTINATION_PATH=${CLONE_DIR}/${DESTINATION_DIRECTORY}
+
 echo "Cloning destination git repository"
 # Setup git
 git config --global user.email "$USER_EMAIL"
@@ -28,7 +30,7 @@ ls -la "$CLONE_DIR"
 # ls -la "$CLONE_DIR"
 
 echo "Copying contents to to git repo"
-cp -r "$FOLDER"/* "$CLONE_DIR"/"$DESTINATION_DIRECTORY"
+cp -r "$FOLDER"/* "$DESTINATION_PATH"
 cd "$CLONE_DIR"
 ls -la
 
